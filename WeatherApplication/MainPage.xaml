@@ -1,0 +1,67 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApplication.MainPage"
+             BackgroundImageSource="weather_background.jpg">
+    <!-- Add a weather-themed background -->
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- App Title -->
+        <Label Text="Weather App"
+               FontSize="32"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               TextColor="White"
+               Grid.Row="0" />
+
+        <!-- Input Section -->
+        <StackLayout Orientation="Vertical" Spacing="15" Grid.Row="1">
+            <Frame BackgroundColor="#FFFFFF"
+                   CornerRadius="25"
+                   HasShadow="False"
+                   Padding="10"
+                   HeightRequest="80"
+                   VerticalOptions="Center"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="0,10">
+                <Entry x:Name="CityEntry"
+           Placeholder="Enter city name"
+           FontSize="30"
+           TextColor="#333333"
+           BackgroundColor="Transparent" />
+            </Frame>
+
+
+            <Button Text="Get Weather"
+                    FontSize="18"
+                    TextColor="White"
+                    BackgroundColor="#4CAF50"
+                    CornerRadius="25"
+                    HeightRequest="50"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="OnGetWeatherClicked"
+                    Padding="10,5" />
+        </StackLayout>
+
+        <!-- Weather Information -->
+        <Frame BackgroundColor="#FFFFFFAA"
+               Padding="15"
+               CornerRadius="20"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start"
+               Grid.Row="2">
+            <Label x:Name="WeatherLabel"
+                   Text="Weather info will appear here."
+                   FontSize="18"
+                   TextColor="#333333"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+        </Frame>
+    </Grid>
+</ContentPage>
